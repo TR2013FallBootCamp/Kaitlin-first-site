@@ -4,40 +4,54 @@
   <head>
   	<link rel="stylesheet" type="text/css" href="reset.css">
   	<link rel="stylesheet" type="text/css" href="practice.css">
+  	<link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
   	  <title>Kaitlin's Site</title>
   </head>
   <body>
-<!--   	<a href="http://jquery.com/">jQuery</a> -->
-  	<script src="jquery.js"></script>
+  	 // <script src="jquery.js"></script>
+  	<script src="jquery-ui-1.10.3.custom.min"></script>
   	<script>
+  	var $jq = jQuery.noConflict();
 /*  	  $( document ).ready(function() {
         $( "a" ).click(function( event ) {
             event.preventDefault();
         });
     });*/
-  	  $(document).ready(function() {
-  	    $("a").on("mouseenter", function() {
-        $(this).css({"color": "#F08080"});
-    	// Can't get to work: $(this).animate({"left": "10px"}, "fast"); 
+  	  $jq(document).ready(function() {
+
+  	    $jq("a").on("mouseenter", function() {
+        $jq(this).css({"color": "green"});
+    	$jq(this).find("a").animate({"top": "-20px"}, fast); //doesn't work
   		});
-  	  	$("a").on("mouseleave", function() {
-  		$(this).css({"color": "#333"});
-  		// Can't get to work: $(this).animate({"left": "0px"}, "fast");
+
+  	  	$jq("a").on("mouseleave", function() {
+  		$jq(this).css({"color": "#333"});
+  		$jq(this).find("a").animate({"top": "0px"}, fast); //doesn't work
   		});
-	  });
+  		});
+	
 		</script>
-	  <div class="header">
+	  <div id="wrapper">
+	  	<div class="header">
 	  	<div class="navigation">
-	  	  	<h1>kaitlinbarrer.com</h1>
+	  	  	<h1><a>kaitlinbarrer.com</a></h1>
 	  	  	<img id="hdrImg" src="kaitlin.jpg"/>
 	   	  	<ul>
-	   	      <li><a href="https://github.com/kkburr">github</a></li>
-	   	      <li><a href="https://twitter.com/noprimarycolor">twitter</a></li>
-	     <!--      <li id="twitter"><a href="https://twitter.com/noprimarycolor"><img src="twitter.jpg"/></a></li> -->
+	   	      <li class="move"><a href="https://github.com/kkburr">github</a></li>
+	   	      <li class="move"><a href="https://twitter.com/noprimarycolor">twitter</a></li>
+	   	      <li class="move"><a href="#">resume</a></li>
 	        </ul>
 	    </div>
 	  </div>
-	  <div class="main"></div>
-
+	  	<div class="main">
+	  		<div class="text">
+	  		  <p>This is where I'll be writing things</p>
+	  		</div>
+	  		<div class="links">
+	  		  <p>This is where I'll be linking to things</p>
+	  		</div>
+	  	</div>
+	  	<!-- <div class="footer"></div> -->
+	  </div>
   	</body>
   </html>

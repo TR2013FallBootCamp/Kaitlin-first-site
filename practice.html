@@ -18,24 +18,30 @@
         });
     });*/
   	  $jq(document).ready(function() {
-
+/*  	  	$jq( "#hdrImg" ).hover( "mouseenter", function() {
+  	  	$jq("#guinea").show();
+  	  	});
+  	  	$jq( "#hdrImg" ).on( "mouseleave", function() {
+  	  	$jq("#guinea").hide();
+  	  	});*/
+    
   	    $jq("a").on("mouseenter", function() {
         $jq(this).css({"color": "green"});
-    	$jq(this).find("a").animate({"top": "-20px"}, fast); //doesn't work
+    	$jq(this).find("li").animate({"padding-top": "-20px"}, fast); //doesn't work
   		});
 
   	  	$jq("a").on("mouseleave", function() {
   		$jq(this).css({"color": "#333"});
-  		$jq(this).find("a").animate({"top": "0px"}, fast); //doesn't work
+  		$jq(this).find("li").animate({"padding-top": "0px"}, fast); //doesn't work
   		});
-  		});
-	
-		</script>
+	  });
+	</script>
 	  <div id="wrapper">
 	  	<div class="header">
 	  	<div class="navigation">
 	  	  	<h1><a>kaitlinbarrer.com</a></h1>
 	  	  	<img id="hdrImg" src="kaitlin.jpg"/>
+	<!--   	  	<p id="guinea">This is a guinea hen leg I'm gnawing on here.</p> -->
 	   	  	<ul>
 	   	      <li class="move"><a href="https://github.com/kkburr">github</a></li>
 	   	      <li class="move"><a href="https://twitter.com/noprimarycolor">twitter</a></li>

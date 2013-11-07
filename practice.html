@@ -9,7 +9,7 @@
   </head>
   <body>
   	 // <script src="jquery.js"></script>
-  	<script src="jquery-ui-1.10.3.custom.min"></script>
+/*<!--   	<script src="jquery-ui-1.10.3.custom.min"></script> -->*/
   	<script>
   	var $jq = jQuery.noConflict();
 /*  	  $( document ).ready(function() {
@@ -25,14 +25,15 @@
   	  	$jq("#guinea").hide();
   	  	});*/
     
-  	    $jq("a").on("mouseenter", function() {
+  	    $jq("li").on("mouseenter", function() {
+         /* debugger;*/
         $jq(this).css({"color": "green"});
-    	$jq(this).find("li").animate({"padding-top": "-20px"}, fast); //doesn't work
+    	$jq(this).parent(".move").animate({"padding-top": 0}, 'slow'); 
   		});
 
-  	  	$jq("a").on("mouseleave", function() {
-  		$jq(this).css({"color": "#333"});
-  		$jq(this).find("li").animate({"padding-top": "0px"}, fast); //doesn't work
+  	  	$jq("li").on("mouseleave", function() {
+  		$jq(this).css({"color": "#333"})
+  		$jq(this).parent(".move").animate({"padding-top": 40}, 'slow').stop(); 
   		});
 	  });
 	</script>
@@ -40,12 +41,12 @@
 	  	<div class="header">
 	  	<div class="navigation">
 	  	  	<h1><a>kaitlinbarrer.com</a></h1>
-	  	  	<img id="hdrImg" src="kaitlin.jpg"/>
+	  	  	<img id="hdrImg" title="me eating a guinea hen leg" src="kaitlin.jpg"/>
 	<!--   	  	<p id="guinea">This is a guinea hen leg I'm gnawing on here.</p> -->
 	   	  	<ul>
-	   	      <li class="move"><a href="https://github.com/kkburr">github</a></li>
-	   	      <li class="move"><a href="https://twitter.com/noprimarycolor">twitter</a></li>
-	   	      <li class="move"><a href="#">resume</a></li>
+	   	      <div class="move"><li><a href="https://github.com/kkburr">github</a></li></div>
+	   	      <div class="move"><li><a href="https://twitter.com/noprimarycolor">twitter</a></li></div>
+	   	      <div class="move"><li><a href="#">resume</a></li></div>
 	        </ul>
 	    </div>
 	  </div>

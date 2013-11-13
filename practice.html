@@ -8,41 +8,24 @@
   	  <title>Kaitlin's Site</title>
   </head>
   <body>
-  	 // <script src="jquery.js"></script>
-/*<!--   	<script src="jquery-ui-1.10.3.custom.min"></script> -->*/
+  	 <script src="jquery.js"></script>
   	<script>
   	var $jq = jQuery.noConflict();
-/*  	  $( document ).ready(function() {
-        $( "a" ).click(function( event ) {
-            event.preventDefault();
-        });
-    });*/
   	  $jq(document).ready(function() {
-/*  	  	$jq( "#hdrImg" ).hover( "mouseenter", function() {
-  	  	$jq("#guinea").show();
-  	  	});
-  	  	$jq( "#hdrImg" ).on( "mouseleave", function() {
-  	  	$jq("#guinea").hide();
-  	  	});*/
-    
-  	    $jq("li").on("mouseenter", function() {
-         /* debugger;*/
-        $jq(this).css({"color": "green"});
-    	$jq(this).parent(".move").animate({"padding-top": 0}, 'slow'); 
-  		});
-
-  	  	$jq("li").on("mouseleave", function() {
-  		$jq(this).css({"color": "#333"})
-  		$jq(this).parent(".move").animate({"padding-top": 40}, 'slow').stop(); 
-  		});
-	  });
-	</script>
+  	  	$jq("li").on("mouseenter", function() {
+  		  $jq(this).find("a").css({"color": "green", "font-size": "1.4em"});
+  		  $jq(this).parent(".move").animate({"padding-top": 20}, 'slow'); 
+  		  });
+        $jq("li").on("mouseleave", function() {
+        $jq(this).find("a").css({"color": "#333", "font-size": "1.25em"});
+        });
+	    });
+	  </script>
 	  <div id="wrapper">
 	  	<div class="header">
 	  	<div class="navigation">
-	  	  	<h1><a>kaitlinbarrer.com</a></h1>
-	  	  	<img id="hdrImg" title="me eating a guinea hen leg" src="kaitlin.jpg"/>
-	<!--   	  	<p id="guinea">This is a guinea hen leg I'm gnawing on here.</p> -->
+	  	  	<h1>kaitlinbarrer.com</h1>
+	  	  	<img id="hdrImg" title="eating a guinea hen leg" src="kaitlin.jpg"/>
 	   	  	<ul>
 	   	      <div class="move"><li><a href="https://github.com/kkburr">github</a></li></div>
 	   	      <div class="move"><li><a href="https://twitter.com/noprimarycolor">twitter</a></li></div>
@@ -51,12 +34,20 @@
 	    </div>
 	  </div>
 	  	<div class="main">
-	  		<div class="text">
-	  		  <p>This is where I'll be writing things</p>
-	  		</div>
-	  		<div class="links">
-	  		  <p>This is where I'll be linking to things</p>
-	  		</div>
+        <div class="mainLeft">
+          <br><p id="intro">If you are interested in being my friend, please fill out the form below!</p><br>
+          <form action="http://127.0.0.1:8080/myaction" method="post" autocomplete="on">
+            <fieldset>
+              <label for="name">First name: </label><input type="text" name="fname"><br>
+              <label for="name">Last name: </label><input type="text" name="lname"><br>
+              <label for="name">E-mail: </label><input type="email" name="email" autocomplete="off"><br>
+              <input type="submit" id="button" value="Send" />
+            </fieldset>
+          </form>	
+        </div>
+      <div class="links">
+	  		  <p>More to Come!</p>
+	  	</div>
 	  	</div>
 	  	<!-- <div class="footer"></div> -->
 	  </div>
